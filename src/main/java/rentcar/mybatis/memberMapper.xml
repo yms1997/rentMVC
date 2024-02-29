@@ -24,8 +24,16 @@
 		delete from member where id=#{id}
 	</delete>
 	
+	<select id="isValidId" parameterType="String" resultType="Integer">
+		select count(*) from member where id=#{id}
+	</select>
+	
 	<update id="memberUpdate" parameterType="member">
 		update member set email=#{email}, tel=#{tel}, hobby=#{hobby}, job=#{job}, age=#{age}, info=#{info} where no=#{no}
+	</update>
+	
+	<update id="memberUploadPhoto" parameterType="member">
+		update member set oFileName=#{oFileName}, sFileName=#{sFileName} where no=#{no}
 	</update>
 	
 	<insert id="memberInsert" parameterType="member">

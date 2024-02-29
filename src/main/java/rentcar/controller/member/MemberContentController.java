@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import rentcar.dao.MemberDAO;
 import rentcar.frontController.Controller;
@@ -19,7 +18,7 @@ public class MemberContentController implements Controller{
 		
 		int no = -1;
 
-		if(request.getAttribute("no") == null) {
+		if(request.getParameter("no") == null) {
 			return "redirect:" + ctx + "/memberLogin.do";
 		}
 		else {

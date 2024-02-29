@@ -1,21 +1,23 @@
-package rentcar.controller.member;
+package rentcar.controller.rentcar;
 
 import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import rentcar.dao.RentcarDAO;
 import rentcar.frontController.Controller;
+import rentcar.vo.RentcarVO;
 
-public class MemberLogoutController implements Controller {
+public class RentCarInfoController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		session.invalidate();
-		response.getWriter().print("done");
-		return null;
+		int no = Integer.parseInt(request.getParameter("no"));
+		RentcarVO vo = RentcarDAO.getInstance().getOneCar(no);
+		
+		request.setAttribute("vo", vo);
+		return "rentcar/RentCarInfo";
 	}
 }

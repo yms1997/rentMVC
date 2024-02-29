@@ -2,12 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<%@ include file="../parts/header.jsp"%>
+<script type="text/javascript" src="scripts/memberJoin.js" defer></script>
 <body>
 	<h1 class="py-3">회원 가입</h1>
 	<form action="${ctx}/memberAdd.do" method="post" enctype="multipart/form-data" >
@@ -59,11 +55,9 @@
 			
 			<tr>
 				<td colspan="2" id="btns">
-					<input type="submit" value="가입" class="col-3 btn btn-primary"/> 
+					<input type="button" value="가입" class="col-3 btn btn-primary" onclick="validCheck(form)"/> 
 					<input type="reset" value="취소" class="col-3 btn btn-warning" /></td>
 			</tr>
 		</table>
 	</form>
-	
-</body>
-</html>
+<%@ include file="../parts/footer.jsp"%>

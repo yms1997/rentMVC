@@ -6,13 +6,13 @@ public class RentcarVO {
 	private int category;
 	private int price;
 	private int usepeople;
-	private int totalQty;
+	private int total_qty;
 	private String company;
 	private String img;
 	private String info;
 	
 	public RentcarVO() {}
-	public RentcarVO(int no, String name, int category, int price, int usepeople, int totalQty, String company,
+	public RentcarVO(int no, String name, int category, int price, int usepeople, int total_qty, String company,
 			String img, String info) {
 		super();
 		this.no = no;
@@ -20,7 +20,7 @@ public class RentcarVO {
 		this.category = category;
 		this.price = price;
 		this.usepeople = usepeople;
-		this.totalQty = totalQty;
+		this.total_qty = total_qty;
 		this.company = company;
 		this.img = img;
 		this.info = info;
@@ -55,11 +55,11 @@ public class RentcarVO {
 	public void setUsepeople(int usepeople) {
 		this.usepeople = usepeople;
 	}
-	public int getTotalQty() {
-		return totalQty;
+	public int getTotal_qty() {
+		return total_qty;
 	}
-	public void setTotalQty(int totalQty) {
-		this.totalQty = totalQty;
+	public void setTotal_qty(int total_qty) {
+		this.total_qty = total_qty;
 	}
 	public String getCompany() {
 		return company;
@@ -82,7 +82,7 @@ public class RentcarVO {
 	@Override
 	public String toString() {
 		return "rentcarVO [no=" + no + ", name=" + name + ", category=" + category + ", price=" + price + ", usepeople="
-				+ usepeople + ", totalQty=" + totalQty + ", company=" + company + ", img=" + img + ", info=" + info
+				+ usepeople + ", total_qty=" + total_qty + ", company=" + company + ", img=" + img + ", info=" + info
 				+ "]";
 	}
 }

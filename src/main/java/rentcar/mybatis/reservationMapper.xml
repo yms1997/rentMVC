@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rentcar.mybatis.reservationMapper">
+	
+	<insert id="reservationInsert" parameterType="Reserve">
+		INSERT INTO carreserve(no, id, qty, dday, rday, usein, usewifi, usenavi, useseat)
+		VALUES (#{no}, #{id}, #{qty}, #{dday}, #{rday}, #{usein}, #{usewifi}, #{usenavi}, #{useseat})
+	</insert>
+	
+	<select id="getJoinCarView" parameterType="String" resultType="View">
+		select reserve_seq, rt.name, rt.price, rt.img, re.qty, re.dday, re.rday, re.usein, re.usewifi, re.useseat, re.usenavi 
+		from rentcar rt, carreserve re
+		where re.id = #{id} and rt.no = re.no;
+	</select>
+</mapper>

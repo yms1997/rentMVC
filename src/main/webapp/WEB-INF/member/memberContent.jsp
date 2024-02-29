@@ -2,12 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<%@ include file="../parts/header.jsp"%>
+<script type="text/javascript" src="scripts/memberContent.js" defer></script>
 <style>
    #photo{
       width:30%;
@@ -72,9 +68,7 @@
   </tr> 
   <tr>
     <td colspan="2" align="center">
-       <input type="button" value="사진 업로드" class='col-3 btn btn-success' id="uploadBtn"  <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
-    	              disabled="disabled"
-          	      </c:if>/> 
+       <input type="button" value="사진 업로드" class='col-3 btn btn-success' id="uploadBtn" /> 
        <input type="submit" value="수정하기" class='col-3 btn btn-primary' /> 
        <input type="button" value="사진 삭제" class='col-3 btn btn-warning' id="deleteBtn"   <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
     	              disabled="disabled"
@@ -93,5 +87,4 @@
 </form>
 </div>
 </c:if>
-</body>
-</html>
+<%@ include file="../parts/footer.jsp"%>

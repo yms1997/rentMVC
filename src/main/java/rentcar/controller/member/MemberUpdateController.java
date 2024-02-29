@@ -38,7 +38,7 @@ public class MemberUpdateController implements Controller{
 		String ctx = request.getContextPath();
 		int cnt = MemberDAO.getInstance().memberUpdate(vo);
 		if(cnt > 0) {
-			return "redirect:" + ctx + "/memberContent.do";
+			return "redirect:" + ctx + "/memberList.do";
 		}
 		else {
 			throw new ServletException("not update");

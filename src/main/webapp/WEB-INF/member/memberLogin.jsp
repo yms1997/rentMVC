@@ -2,14 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+<%@ include file="../parts/header.jsp"%>
 <title>Login</title>
-</head>
+<script type="text/javascript" src="scripts/memberLoginandOut.js" defer></script>
 <body>
-	<form action="${ctx}/memberLogin.do" method="post">
+	<form id="loginForm" method="post">
 		<table class="table table-bordered">
 			<tr>
 				<td>아이디</td>
@@ -20,10 +17,9 @@
 				<td><input class="col-12" type="password" name="pw" required /></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" value="로그인"
-					class="col-3 btn btn-primary" /></td>
+				<td colspan="2" align="center"><input type="button" value="로그인"
+					class="col-3 btn btn-primary" onclick="loginAjax(form)" /></td>
 			</tr>
 		</table>
 	</form>
-</body>
-</html>
+<%@ include file="../parts/footer.jsp"%>

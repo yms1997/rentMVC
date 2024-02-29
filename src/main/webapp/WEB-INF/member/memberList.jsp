@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<%@ include file="../parts/header.jsp"%>
 <script type="text/javascript">
   function deleteFn(no, id){
 	  location.href="${ctx}/memberDelete.do?no="+no+"&id="+id; 
@@ -46,5 +47,4 @@
 		</tr>
 	</c:forEach>
 </table>
-</body>
-</html>
+<%@ include file="../parts/footer.jsp"%>

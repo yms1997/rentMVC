@@ -7,6 +7,9 @@
 	
 	<typeAliases>
 		<typeAlias type="rentcar.vo.MemberVO" alias="member"/>
+		<typeAlias type="rentcar.vo.RentcarVO" alias="Rentcar"/>
+		<typeAlias type="rentcar.vo.CarReserveVO" alias="Reserve"/>
+		<typeAlias type="rentcar.vo.ReservationViewVO" alias="View"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -23,6 +26,8 @@
 	
 	<mappers>
 		<mapper resource="rentcar/mybatis/memberMapper.xml"/>
+		<mapper resource="rentcar/mybatis/rentcarMapper.xml"/>
+		<mapper resource="rentcar/mybatis/reservationMapper.xml"/>
 	</mappers>
 	
 </configuration>

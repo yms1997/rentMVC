@@ -72,4 +72,24 @@ public class MemberDAO {
 		session.close();
 		return cnt;
 	}
+	
+	public int memberUploadPhoto(int no, String oFileName, String sFileName) {
+    	MemberVO vo = new MemberVO();
+    	vo.setNo(no);
+    	vo.setoFileName(oFileName);
+    	vo.setsFileName(sFileName);
+    	
+    	SqlSession session = MybatisConfig.getInstance().openSession();
+    	int cnt = session.update("memberUploadPhoto", vo);
+    	session.commit();
+    	session.close();
+        return cnt;
+    }
+	
+	public boolean isValidId(String id) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.selectOne("isValidId", id);
+		session.close();
+		return cnt == 0 ? false : true;
+	}
 }
