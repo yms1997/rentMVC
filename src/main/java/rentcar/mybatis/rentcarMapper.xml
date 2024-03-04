@@ -5,23 +5,32 @@
 <mapper namespace="rentcar.mybatis.rentcarMapper">
 
 	<select id="getAllRentcar" resultType="Rentcar">
-		select * from rentcar order by no desc
+		select * from rentcar order by no desc;
 	</select>
 	
 	<select id="getRecentCarList" resultType="Rentcar">
-		select * from rentcar where total_qty > 0 order by no desc limit 6
+		select * from rentcar where total_qty > 0 order by no desc limit 6;
 	</select>
 	
 	<select id="getKindCarList" parameterType="Integer" resultType="Rentcar">
-		select * from rentcar where category=#{category} order by price desc
+		select * from rentcar where category=#{category} order by price desc;
 	</select>
 	
 	<select id="getOneRentCar" parameterType="Integer" resultType="Rentcar">
-		select * from rentcar where no=#{no}
+		select * from rentcar where no=#{no};
 	</select>
 	
+	<insert id="insertRentcar" parameterType="Rentcar">
+		INSERT INTO rentcar VALUES (null, #{name}, #{category}, 
+		#{price}, #{usepeople}, #{total_qty}, #{company}, #{img}, #{info});
+	</insert>
+	
+	<update id="addTotalQty" parameterType="Reserve">
+		update rentcar set total_qty = total_qty + #{qty} where no=#{no};
+	</update>
+	
 	<update id="reduceTotalQty" parameterType="Reserve">
-		update rentcar set total_qty = total_qty - #{qty} where no=#{no}
+		update rentcar set total_qty = total_qty - #{qty} where no=#{no};
 	</update>
 	
 </mapper>

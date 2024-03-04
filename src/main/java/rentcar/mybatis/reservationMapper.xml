@@ -14,4 +14,12 @@
 		from rentcar rt, carreserve re
 		where re.id = #{id} and rt.no = re.no;
 	</select>
+	
+	<select id="getOneReservation" parameterType="Integer" resultType="Reserve">
+		select * from carreserve where reserve_seq=#{reserve_seq};
+	</select>
+	
+	<delete id="Deletereservation" parameterType="Integer">
+		delete from carreserve where reserve_seq=#{reserve_req};
+	</delete>
 </mapper>

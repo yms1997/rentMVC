@@ -1,7 +1,7 @@
 package rentcar.vo;
 
 public class ReservationViewVO {
-	private int regNo;
+	private int reserve_seq;
 	private String name;
 	private int price;
 	private String img;
@@ -16,11 +16,11 @@ public class ReservationViewVO {
 	private String endDate;
 	
 	
-	public int getRegNo() {
-		return regNo;
+	public int getreserve_seq() {
+		return reserve_seq;
 	}
-	public void setRegNo(int regNo) {
-		this.regNo = regNo;
+	public void setreserve_seq(int reserve_seq) {
+		this.reserve_seq = reserve_seq;
 	}
 	public String getName() {
 		return name;
@@ -97,7 +97,7 @@ public class ReservationViewVO {
 	
 	@Override
 	public String toString() {
-		return "ReservationViewVO [regNo=" + regNo + ", name=" + name + ", price=" + price + ", img=" + img + ", qty="
+		return "ReservationViewVO [reserve_seq=" + reserve_seq + ", name=" + name + ", price=" + price + ", img=" + img + ", qty="
 				+ qty + ", dday=" + dday + ", rday=" + rday + ", usein=" + usein + ", usewifi=" + usewifi + ", useseat="
 				+ useseat + ", usenavi=" + usenavi + ", totalPrice=" + totalPrice + ", endDate=" + endDate + "]";
 	}

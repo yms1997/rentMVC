@@ -31,4 +31,19 @@ public class ReservationDAO {
 		session.close();
 		return (ArrayList<ReservationViewVO>)list;
 	}
+	
+	public CarReserveVO getOneReservation(int reserve_req) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		CarReserveVO vo = session.selectOne("getOneReservation", reserve_req);
+		session.close();
+		return vo;
+	}
+	
+	public int deleteReservation(int reserve_req) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.delete("Deletereservation", reserve_req);
+		session.commit();
+		session.close();
+		return cnt;
+	}
 }

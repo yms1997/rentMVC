@@ -15,11 +15,15 @@ import rentcar.controller.member.MemberLoginController;
 import rentcar.controller.member.MemberLogoutController;
 import rentcar.controller.member.MemberReserveListController;
 import rentcar.controller.member.MemberUpdateController;
+import rentcar.controller.member.MemberdeleteResController;
 import rentcar.controller.member.ValidIdAjaxController;
 import rentcar.controller.rentcar.RentCarInfoController;
+import rentcar.controller.rentcar.RentCarInsertController;
 import rentcar.controller.rentcar.RentCarListController;
+import rentcar.controller.rentcar.RentCarRegisterController;
 import rentcar.controller.rentcar.RentCarReservationController;
 import rentcar.controller.rentcar.RentCarSelectOptionController;
+import rentcar.controller.rentcar.RentCarUploadImgController;
 
 public class HandlerMapping {
 	private HashMap<String, Controller> mappings;
@@ -40,11 +44,15 @@ public class HandlerMapping {
 		mappings.put("/memberUploadImg.do", new MemberImgUploadController());
 		mappings.put("/memberDeleteImg.do", new MemberImgDeleteController());
 		mappings.put("/userReserveList.do", new MemberReserveListController());
+		mappings.put("/deleteRes.do", new MemberdeleteResController());
 //		rentcarController
 		mappings.put("/rentcarList.do", new RentCarListController());
 		mappings.put("/rentcarInfo.do", new RentCarInfoController());
 		mappings.put("/selectCarOption.do", new RentCarSelectOptionController());
 		mappings.put("/reservateCar.do", new RentCarReservationController());
+		mappings.put("/registerCar.do", new RentCarRegisterController());
+		mappings.put("/uploadCarImg.do", new RentCarUploadImgController());
+		mappings.put("/insertCar.do", new RentCarInsertController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

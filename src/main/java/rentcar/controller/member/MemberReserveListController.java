@@ -26,6 +26,10 @@ public class MemberReserveListController implements Controller {
 		
 		String userid = (String)session.getAttribute("loginId");
 		ArrayList<ReservationViewVO> list = ReservationDAO.getInstance().getJoinCarView(userid);
+		if(list.size() == 0) {
+			
+		}
+		
 		
 		for(ReservationViewVO vo : list) {
 			if(vo == null) break;

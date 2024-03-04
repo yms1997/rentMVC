@@ -45,6 +45,22 @@ public class RentcarDAO {
 		return vo;
 	}
 	
+	public int insertRentcar(RentcarVO vo) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.insert("insertRentcar", vo);
+		session.commit();
+		session.close();
+		return cnt;
+	}
+	
+	public int addTotalQty(CarReserveVO vo) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.update("addTotalQty", vo);
+		session.commit();
+		session.close();
+		return cnt;
+	}
+	
 	public int reduceTotalQty(CarReserveVO vo) {
 		SqlSession session = MybatisConfig.getInstance().openSession();
 		int cnt = session.update("reduceTotalQty", vo);

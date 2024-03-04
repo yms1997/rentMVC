@@ -57,7 +57,7 @@
 							</c:choose>
 						</td>
 						<td>
-							<button id="delBtn" onclick="location.href='${ctx}/deleteRes.do?regNo=${vo.regNo}'"> X </button>
+							<button id="delBtn" onclick="deleteReservation('${vo.reserve_seq}')"> X </button>
 						</td>
 					</tr>			
 				</c:forEach>
