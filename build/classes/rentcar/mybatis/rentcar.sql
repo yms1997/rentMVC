@@ -42,6 +42,15 @@ CREATE TABLE carreserve(
     useseat INT -- 베이비시트 적용 
 );
 
+CREATE TABLE Board(
+	no INT primary key auto_increment,
+    writer varchar(20),
+    subject varchar(100),
+    contents varchar(300),
+    regDate varchar(50)
+);
+
+
 INSERT INTO member(id, pw, email, tel, hobby, job, age, info) VALUES ('admin', '1234', 'admin@naver.com', '010-0000-0000', '프로그래밍', '개발자', 33, '반갑습니다');
 INSERT INTO member(id, pw, email, tel, hobby, job, age, info) VALUES ('qwer', '1234', 'qwer@naver.com', '010-2343-2444', '스포츠', '개발자', 31, '반갑습니다');
 INSERT INTO member(id, pw, email, tel, hobby, job, age, info) VALUES ('asdf', '1234', 'qwer@naver.com', '010-2343-2444', '스포츠', '개발자', 32, '반갑습니다');

@@ -34,8 +34,13 @@
 				</div>
 				<div class="gnb">
 					<a href="${ctx}/rentcarList.do?kind=recent">차량 조회</a>
+					<c:if test="${log ne null}">
           			<a href="${ctx}/userReserveList.do"> 내 예약 확인  </a>
+          			</c:if>
+          			<c:if test="${logId eq 'admin'}">
           			<a href="${ctx}/registerCar.do"> 차량 등록</a>
+          			</c:if>
+          			<a href="${ctx}/boardList.do">자유 게시판</a>
 				</div>
 			</nav>
 		</header>
