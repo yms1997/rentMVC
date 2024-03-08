@@ -32,7 +32,8 @@ function loginAjax(form){
 	form.pw.value = "";
 }
 
-document.querySelector(".logout-btn").addEventListener("click", () => {
+
+function logoutAjax(){
 	fetch("memberLogout.do", {
 		method : "GET",
 	})
@@ -43,5 +44,5 @@ document.querySelector(".logout-btn").addEventListener("click", () => {
 			location.href = ctx +"/main.do";
 		}
 	})
-	.catch(error => "Error: " + error)
-});
+	.catch(error => "Error: " + error);
+}

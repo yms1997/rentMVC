@@ -11,7 +11,7 @@
 			</div>
 			<div class="board-table">
 				<form method="post" action="${ctx}/boardUpdate.do">
-					<table>
+					<table border="1">
 						<tr>
 							<th>번호</th>
 							<td colspan="3">${vo.no}</td>

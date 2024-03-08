@@ -1,5 +1,3 @@
-//let ctx = window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
-
 (() => {
 	if(!document.querySelector("#id").value){
 		alert("로그인 먼저 해주세요")

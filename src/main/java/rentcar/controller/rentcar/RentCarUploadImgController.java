@@ -17,8 +17,8 @@ public class RentCarUploadImgController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String savePath = request.getServletContext().getRealPath("/Uploads");
-		
+		String savePath = request.getServletContext().getRealPath("/img");
+
 		File isDir = new File(savePath); // 이미 있는 img 경로 받아오기
 		if(!isDir.isDirectory()) {
 			System.out.println("디렉토리가 없습니다. 디렉토리를 새로 생성합니다.");

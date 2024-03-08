@@ -20,12 +20,12 @@
 				<c:if test="${log eq null}">
 				GUEST님
 				<a href="${ctx}/memberInsert.do">회원가입</a>
-				<a href="${ctx}/memberLogin.do">로그인</a>
+				<button onclick="location.href='${ctx}/memberLogin.do'">로그인</button>
 				</c:if>
 				<c:if test="${log ne null}">
 				${logId}님
 				<a href="${ctx}/memberContent.do?no=${log}">내정보</a>
-				<a class="logout-btn">로그아웃</a>
+				<button class="logout-btn" onclick="logoutAjax()">로그아웃</button>
 				</c:if>
 			</div>
 			<nav>

@@ -2,7 +2,12 @@ package rentcar.frontController;
 
 import java.util.HashMap;
 
+import rentcar.controller.board.BoardAddController;
+import rentcar.controller.board.BoardContentController;
+import rentcar.controller.board.BoardDeleteController;
+import rentcar.controller.board.BoardInsertController;
 import rentcar.controller.board.BoardListController;
+import rentcar.controller.board.BoardUpdateController;
 import rentcar.controller.member.MainController;
 import rentcar.controller.member.MemberAddController;
 import rentcar.controller.member.MemberContentController;
@@ -56,6 +61,11 @@ public class HandlerMapping {
 		mappings.put("/insertCar.do", new RentCarInsertController());
 //		boardController
 		mappings.put("/boardList.do", new BoardListController());
+		mappings.put("/boardContent.do", new BoardContentController());
+		mappings.put("/boardUpdate.do", new BoardUpdateController());
+		mappings.put("/boardDelete.do", new BoardDeleteController());
+		mappings.put("/boardInsert.do", new BoardInsertController());
+		mappings.put("/Addboard.do", new BoardAddController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

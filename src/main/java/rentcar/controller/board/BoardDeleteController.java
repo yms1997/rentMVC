@@ -8,26 +8,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import rentcar.dao.BoardDAO;
 import rentcar.frontController.Controller;
-import rentcar.vo.BoardVO;
 
-public class BoardContentController implements Controller {
+public class BoardDeleteController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String ctx = request.getContextPath();
 		
-		int no = -1;
+		int no = Integer.parseInt(request.getParameter("no"));
 		
-		if(request.getParameter("no") == null) {
+		int cnt = BoardDAO.getInstance().boardDelete(no);
+		if(cnt > 0) {
 			return "redirect:" + ctx + "/boardList.do";
 		}
 		else {
-			no = Integer.parseInt(request.getParameter("no"));
+			throw new ServletException("not Delete");
 		}
-		BoardVO vo = BoardDAO.getInstance().boardContent(no);
-		request.setAttribute("vo", vo);
-		return "board/boardContent";
 	}
-
+	
 }

@@ -30,4 +30,35 @@ public class BoardDAO {
 		session.close();
 		return cnt;
 	}
+	
+	public BoardVO boardContent(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		BoardVO vo = session.selectOne("boardContent", no);
+		session.close();
+		return vo;
+	}
+	
+	public int boardUpdate(BoardVO vo) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.update("updateboardContent", vo);
+		session.commit();
+		session.close();
+		return cnt;
+	}
+	
+	public int boardDelete(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.delete("boardDelete", no);
+		session.commit();
+		session.close();
+		return cnt;
+	}
+	
+	public int boardInsert(BoardVO vo) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.insert("boardInsert", vo);
+		session.commit();
+		session.close();
+		return cnt;
+	}
 }

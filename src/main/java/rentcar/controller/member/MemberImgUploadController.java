@@ -20,7 +20,7 @@ public class MemberImgUploadController implements Controller{
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		String saveDirectory = request.getServletContext().getRealPath("/Uploads");
+		String saveDirectory = request.getServletContext().getRealPath("/img");
 		
 		Path saveDirPath = Paths.get(saveDirectory);
 		if(!Files.isDirectory(saveDirPath)) {

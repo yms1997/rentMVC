@@ -86,7 +86,7 @@ function uploadFile() {
 		}
 		else{
 			alert(data + "파일 업로드 성공");
-			let src = ctx + "/Uploads/" + data;
+			let src = ctx + "/img/" + data;
 			console.log("src = " + src);
 			document.querySelector("#inputImg").setAttribute("src", src);
 			document.querySelector("#imgVal").setAttribute("value", data);

@@ -10,24 +10,27 @@ import rentcar.dao.BoardDAO;
 import rentcar.frontController.Controller;
 import rentcar.vo.BoardVO;
 
-public class BoardContentController implements Controller {
+public class BoardAddController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		String subject = request.getParameter("subject");
+		String contents = request.getParameter("contents");
+		String writer = request.getParameter("writer");
+		
+		BoardVO vo = null;
+		vo = new BoardVO(writer, subject, contents);
+		
 		String ctx = request.getContextPath();
-		
-		int no = -1;
-		
-		if(request.getParameter("no") == null) {
+		int cnt = BoardDAO.getInstance().boardInsert(vo);
+		if(cnt > 0) {
 			return "redirect:" + ctx + "/boardList.do";
 		}
 		else {
-			no = Integer.parseInt(request.getParameter("no"));
+			throw new ServletException("not Insert");
 		}
-		BoardVO vo = BoardDAO.getInstance().boardContent(no);
-		request.setAttribute("vo", vo);
-		return "board/boardContent";
 	}
 
 }

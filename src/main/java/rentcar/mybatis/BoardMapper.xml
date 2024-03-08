@@ -5,7 +5,7 @@
 <mapper namespace="rentcar.mybatis.BoardMapper">
 	
 	<select id="boardList" resultType="Board">
-		select * from Board;
+		select * from Board order by no desc;
 	</select>
 	
 	<select id="countboardList" resultType="Integer">
@@ -19,5 +19,14 @@
 	<update id="updateboardContent" parameterType="Board">
 		update Board set subject=#{subject}, contents=#{contents} where no=#{no};
 	</update>
+	
+	<delete id="boardDelete" parameterType="Integer">
+		delete from Board where no=#{no};
+	</delete>
+	
+	<insert id="boardInsert" parameterType="Board">
+		insert into Board(writer, subject, contents, regDate)
+		values (#{writer}, #{subject}, #{contents}, curdate());
+	</insert>
 	
 </mapper>

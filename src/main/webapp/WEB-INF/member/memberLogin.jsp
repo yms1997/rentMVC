@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <%@ include file="../parts/header.jsp"%>
 <title>Login</title>
-<script type="text/javascript" src="scripts/memberLoginandOut.js" defer></script>
-<body>
+<main>
 	<form id="loginForm" method="post">
 		<table class="table table-bordered">
 			<tr>
@@ -22,4 +19,5 @@
 			</tr>
 		</table>
 	</form>
+</main>
 <%@ include file="../parts/footer.jsp"%>

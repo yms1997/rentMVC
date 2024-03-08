@@ -7,6 +7,9 @@ public class BoardVO {
 	private String contents;//내용
 	private String regDate;//작성일
     
+	public BoardVO() {
+	}
+	
     public BoardVO(int no, String writer, String subject, String contents, String regDate) {
     	super();
     	this.no = no;
@@ -14,6 +17,12 @@ public class BoardVO {
     	this.subject = subject;
     	this.contents = contents;
     	this.regDate = regDate;
+    }
+    
+    public BoardVO(String writer, String subject, String contents) {
+    	this.writer = writer;
+    	this.subject = subject;
+    	this.contents = contents;
     }
     
 	public int getNo() {
