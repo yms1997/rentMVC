@@ -6,17 +6,19 @@ public class BoardVO {
 	private String subject;//제목
 	private String contents;//내용
 	private String regDate;//작성일
+	private int read_cnt;//조회수
     
 	public BoardVO() {
 	}
 	
-    public BoardVO(int no, String writer, String subject, String contents, String regDate) {
+    public BoardVO(int no, String writer, String subject, String contents, String regDate, int read_cnt) {
     	super();
     	this.no = no;
     	this.writer = writer;
     	this.subject = subject;
     	this.contents = contents;
     	this.regDate = regDate;
+    	this.read_cnt = read_cnt;
     }
     
     public BoardVO(String writer, String subject, String contents) {
@@ -54,6 +56,13 @@ public class BoardVO {
 	}
 	public void setRegDate(String regDate) {
 		this.regDate = regDate;
+	}
+	public int getRead_cnt() {
+		return read_cnt;
+	}
+
+	public void setRead_cnt(int read_cnt) {
+		this.read_cnt = read_cnt;
 	}
 
 	@Override

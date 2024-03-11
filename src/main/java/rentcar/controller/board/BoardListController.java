@@ -18,6 +18,7 @@ public class BoardListController implements Controller {
 			throws ServletException, IOException {
 		
 		ArrayList<BoardVO> list = BoardDAO.getInstance().boardList();
+		System.out.println(list);
 		int totalCount = BoardDAO.getInstance().countboardList();
 //		System.out.println(cnt);
 		
@@ -39,7 +40,8 @@ public class BoardListController implements Controller {
 		if(PostEndNum > totalCount) {
 			PostEndNum = totalCount;
 		}
-		
+		request.setAttribute("boardCnt", boardCnt);
+		request.setAttribute("curPageNum", curPageNum);
 		request.setAttribute("PoststartNum", PoststartNum);
 		request.setAttribute("PostEndNum", PostEndNum);
 		

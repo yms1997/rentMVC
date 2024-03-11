@@ -17,16 +17,16 @@
 						<th>작성일</th>
 						<th>제목</th>
 						<th>내용</th>
-						<th>삭제</th>
+						<th>조회수</th>
 					</tr>
-					<c:forEach var="vo" items="${list}" begin="${PoststartNum}" end="${PostEndNum - 1}" step="1">
+					<c:forEach var="vo" items="${list}" begin="${PoststartNum}" end="${PostEndNum - 1}" step="1" varStatus="i">
 						<tr>
-							<td>${vo.no}</td>
+							<td>${(totalCount - i.index) - ((startPageNum - 1) * boardCnt)}</td>
 							<td>${vo.writer}</td>
 							<td>${vo.regDate}</td>
-							<td><a href="${ctx}/boardContent.do?no=${vo.no}" onclick="return checkId2('${logId}')">${vo.subject}</a></td>
+							<td><a href="${ctx}/boardView.do?no=${vo.no}">${vo.subject}</a></td>
 							<td>${vo.contents}</td>
-							<td><button onclick="Deleteboard('${vo.no}')"> 삭제 </button></td>
+							<td>${vo.read_cnt}</td>
 						</tr>
 					</c:forEach>
 					<tr>

@@ -8,6 +8,7 @@ import rentcar.controller.board.BoardDeleteController;
 import rentcar.controller.board.BoardInsertController;
 import rentcar.controller.board.BoardListController;
 import rentcar.controller.board.BoardUpdateController;
+import rentcar.controller.board.BoardViewController;
 import rentcar.controller.member.MainController;
 import rentcar.controller.member.MemberAddController;
 import rentcar.controller.member.MemberContentController;
@@ -61,6 +62,7 @@ public class HandlerMapping {
 		mappings.put("/insertCar.do", new RentCarInsertController());
 //		boardController
 		mappings.put("/boardList.do", new BoardListController());
+		mappings.put("/boardView.do", new BoardViewController());
 		mappings.put("/boardContent.do", new BoardContentController());
 		mappings.put("/boardUpdate.do", new BoardUpdateController());
 		mappings.put("/boardDelete.do", new BoardDeleteController());

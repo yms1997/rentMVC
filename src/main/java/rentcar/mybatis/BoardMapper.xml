@@ -20,13 +20,17 @@
 		update Board set subject=#{subject}, contents=#{contents} where no=#{no};
 	</update>
 	
+	<update id="updateRead_cnt" parameterType="Integer">
+		update Board set read_cnt=read_cnt + 1 where no=#{no};
+	</update>
+	
 	<delete id="boardDelete" parameterType="Integer">
 		delete from Board where no=#{no};
 	</delete>
 	
 	<insert id="boardInsert" parameterType="Board">
-		insert into Board(writer, subject, contents, regDate)
-		values (#{writer}, #{subject}, #{contents}, curdate());
+		insert into Board(writer, subject, contents, regDate, read_cnt)
+		values (#{writer}, #{subject}, #{contents}, curdate(), 0);
 	</insert>
 	
 </mapper>

@@ -34,7 +34,7 @@
 				</div>
 				<div class="gnb">
 					<a href="${ctx}/rentcarList.do?kind=recent">차량 조회</a>
-					<c:if test="${log ne null}">
+					<c:if test="${log ne null && logId ne 'admin'}">
           			<a href="${ctx}/userReserveList.do"> 내 예약 확인  </a>
           			</c:if>
           			<c:if test="${logId eq 'admin'}">

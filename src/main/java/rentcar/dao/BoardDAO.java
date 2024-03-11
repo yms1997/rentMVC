@@ -61,4 +61,12 @@ public class BoardDAO {
 		session.close();
 		return cnt;
 	}
+	
+	public int boardUpdateReadCnt(int no) {
+		SqlSession session = MybatisConfig.getInstance().openSession();
+		int cnt = session.update("updateRead_cnt", no);
+		session.commit();
+		session.close();
+		return cnt;
+	}
 }

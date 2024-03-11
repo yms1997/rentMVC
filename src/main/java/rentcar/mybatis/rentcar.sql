@@ -47,7 +47,8 @@ CREATE TABLE Board(
     writer varchar(20),
     subject varchar(100),
     contents varchar(300),
-    regDate varchar(50)
+    regDate varchar(50),
+    read_cnt INT
 );
 
 
